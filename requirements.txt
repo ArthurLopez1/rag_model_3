@@ -1,0 +1,13 @@
+langchain
+langchain-community
+llama-parse
+langchain-nomic
+langchain-ollama
+scikit-learn
+streamlit
+ollama
+langchain-core
+langchain_text_splitters
+transformers
+PyPDF2
+faiss-cpu

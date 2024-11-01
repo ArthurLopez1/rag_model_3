@@ -1,18 +1,15 @@
 # streamlit_app.py
 import streamlit as st
-from backend.config.settings import Config
-from backend.models.llm_models import HFModel   
-from backend.vectorstore.vectorstore_manager import VectorStoreManager
-from backend.edges.router import get_router_prompt
-from backend.edges.router import get_rag_prompt
-from backend.edges.router import get_retrieval_grader_prompt
-from backend.edges.router import get_hallucination_grader_prompt
+from settings import Config
+from llm_models import HFModel   
+from vectorstore import VectorStoreManager
+from router import get_router_prompt, get_retrieval_grader_prompt, get_rag_prompt, get_hallucination_grader
 
 # Initialize environment and settings
 Config.initialize()
 
 # Load the LLM model
-llm = LLMModel()
+llm = HFModel()
 
 # Vector store setup
 vector_manager = VectorStoreManager("backend/data/ersattningsmodell_vaders_2019.pdf")
