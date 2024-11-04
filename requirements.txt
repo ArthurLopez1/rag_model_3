@@ -11,3 +11,6 @@ langchain_text_splitters
 transformers
 PyPDF2
 faiss-cpu
+torch
+langgraph
+Ipython

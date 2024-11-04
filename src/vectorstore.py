@@ -2,9 +2,9 @@
 import os
 import faiss
 import numpy as np
-from backend.models.llm_models import HFModel
-from backend.utils.pdf_parser import parse_pdf_with_pypdf
-from backend.config.settings import Config
+from llm_models import HFModel, LLMModel
+from file_handler import parse_pdf_with_pypdf
+from settings import Config
 
 class VectorStoreManager:
     def __init__(self):

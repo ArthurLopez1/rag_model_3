@@ -1,9 +1,9 @@
 # streamlit_app.py
 import streamlit as st
 from settings import Config
-from llm_models import HFModel   
-from vectorstore import VectorStoreManager
-from router import get_router_prompt, get_retrieval_grader_prompt, get_rag_prompt, get_hallucination_grader
+from src.llm_models import HFModel   
+from src.vectorstore import VectorStoreManager
+from src.components import format_docs, get_router_prompt, get_retrieval_grader_prompt, get_rag_prompt, get_hallucination_grader
 
 # Initialize environment and settings
 Config.initialize()
@@ -12,7 +12,7 @@ Config.initialize()
 llm = HFModel()
 
 # Vector store setup
-vector_manager = VectorStoreManager("backend/data/ersattningsmodell_vaders_2019.pdf")
+vector_manager = VectorStoreManager("data/ersattningsmodell_vaders_2019.pdf")
 
 # Streamlit UI
 st.title("Local RAG Chatbot")

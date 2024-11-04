@@ -2,9 +2,9 @@ import os
 from file_handler import parse_pdf_with_pypdf
 from vectorstore import VectorStoreManager
 from llm_models import HFModel 
-from router import get_rag_prompt
-from router import get_retrieval_grader_prompt
-from router import get_hallucination_grader_prompt
+from rag_model_3.src.components import get_rag_prompt
+from rag_model_3.src.components import get_retrieval_grader_prompt
+from rag_model_3.src.components import get_hallucination_grader_prompt
 
 
 class DataIngestor:

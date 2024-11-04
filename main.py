@@ -1,15 +1,15 @@
 # main.py
-from backend.config.settings import Config
-from backend.models import LLMModel
-from backend.vectorstore.vectorstore_manager import VectorStoreManager
-from backend.edges import get_router_prompt, get_rag_prompt
-from backend.edges import get_retrieval_grader_prompt
+from settings import Config
+from src.llm_models import LLMModel, HFModel
+from src.vectorstore import VectorStoreManager
+from src.components import get_router_prompt, get_rag_prompt, format_docs
+from src.components import get_retrieval_grader_prompt
 
 def main():
     Config.initialize()
 
-    llm = LLMModel()
-    vector_manager = VectorStoreManager("backend/data/ersattningsmodell_vaders_2019.pdf")
+    llm = HFModel()
+    vector_manager = VectorStoreManager("data/ersattningsmodell_vaders_2019.pdf")
 
     # Example Question
     question = "What are the rules for a weather situation to count for a full hour?"
@@ -20,7 +20,7 @@ def main():
     print("Routing to:", route_decision)
 
     # Retrieval Node (VectorStore interaction example)
-    docs = vector_manager.load_documents("backend/data/ersattningsmodell_vaders_2019.pdf")
+    docs = vector_manager.load_documents("data/ersattningsmodell_vaders_2019.pdf")
     context = format_docs(docs)
 
     # RAG Node

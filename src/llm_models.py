@@ -1,5 +1,7 @@
-# models/llm_model.py
+
 from langchain_ollama import ChatOllama
+from transformers import AutoTokenizer, AutoModel, AutoModelForSeq2SeqLM, pipeline, T5Model
+import torch
 
 class LLMModel:
     def __init__(self, model_name="llama3.2:1b-instruct-fp16", temperature=0, format=None):
@@ -12,9 +14,6 @@ class LLMModel:
         json_model = ChatOllama(model=self.model.model, temperature=self.model.temperature, format="json")
         return json_model(prompt)
     
-
-from transformers import AutoTokenizer, AutoModel, AutoModelForSeq2SeqLM, pipeline, T5Model
-import torch
 
 class HFModel:
     def __init__(self, embedding_model_name="llama3.2:1b-instruct-fp16",

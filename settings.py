@@ -24,5 +24,5 @@ class Config:
         Config.set_env("LANGCHAIN_API_KEY")
         os.environ["TOKENIZERS_PARALLELISM"] = "true"
         os.environ["LANGCHAIN_TRACING_V2"] = "true"
-        os.environ["LANGCHAIN_PROJECT"] = "local-llama32-rag"
+        os.environ["LANGCHAIN_PROJECT"] = "local_model_3"
 
